@@ -3,7 +3,7 @@ import *  as fs from "fs"
 import path from "path"
 export default async function handler(req, res) {
   try{
-    const filePath = path.join("public","q-vercel-python.json")
+    const filePath = path.join(process.cwd(),"JSON","q-vercel-python.json")
     const fileData = await fs.promises.readFile(filePath,"utf-8")
     const data = JSON.parse(fileData)
     const { name, marks } = req.query;
